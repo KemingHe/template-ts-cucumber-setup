@@ -4,7 +4,10 @@
   "description": "TypeScript x CucumberJS x Jest tutorial.",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js -p default"
+    "test": "npm-run-all test-unit test-behave",
+    "test-behave": "cucumber-js -p default",
+    "test-unit": "jest",
+    "test-unit-watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -41,6 +44,10 @@
     "jest-github-actions-reporter": "^1.0.3",
     "sinon": "^17.0.1",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -1,12 +1,12 @@
 # ./features/fraud-prevention.feature
-Feature: Fraud Prevention Feature for My Banking System
+Feature: Fraud Prevention
   
-  Scenario: Alerts user when withdrawing abnormally large amount
-    Given A user's average and peak withdraw amount in history
-    When User tries to withdraw amount considerably larger than average or peak
-    Then Pause the transaction, log and alert the bank and the user for confirmation
+  Scenario: Alerts abnormal withdrawal
+    Given A user's average $20 withdraw amounts in history
+    When User tries to withdraw $100, which is more than the set threshold of 3 * average
+    Then User's account will be on alert
 
-  Scenario: Summary of one user story under this feature
+  Scenario: Sample scenario
     Given The relevant background of the situation
     When Something happens naturally or through some actions
-    Then Some results are expected from the system through this feature
+    Then The expected outcome should be achieved

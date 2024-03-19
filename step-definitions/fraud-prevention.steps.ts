@@ -2,53 +2,47 @@
 // @ts-check
 import { binding, given, then, when } from 'cucumber-tsflow';
 import * as assert from 'assert';
+import { User } from '../src/user';
 
-// import { }
+// Scenario 1: Alerts abnormal withdrawal
+@binding()
+export class FraudPreventionSteps {
+  private user = new User('Test Dummy');
 
-// @binding()
-// export class AlertAbnormalWithdrawalSteps {
-//   private 
-// }
+  @given("A user's average ${float} withdraw amounts in history")
+  public givenUserHistory(average: number): void {
+    this.user.simpleMeanWithDrawal = average;
+  }
 
-// // step-definitions/fraud-prevention.steps.ts
-// // @ts-check
-// import { binding, given, then, when } from 'cucumber-tsflow';
-// import * as assert from 'assert';
-// import sinon from 'sinon';
+  @when("User tries to withdraw ${float}, which is more than the set threshold of {float} * average")
+  public whenUserTriesToWithdrawOverThreshold(current: number, multiplier: number): void {
+    this.user.simpleThreshold = this.user.simpleMeanWithDrawal * 2;
+    this.user.simpleWithdrawalAmount = current;
+  }
 
-// import { User } from '../models/user'; // Assuming you have a User model
+  @then("User's account will be on alert")
+  public thenUserAccountOnAlert(): void {
+    assert.ok(this.user.hasAlerts());
+  }
+}
 
-// @binding()
-// export class AlertAbnormalWithdrawalSteps {
-//   private user: sinon.SinonStubbedInstance<User>;
+// Scenario 2: Sample scenario
+@binding()
+export class SampleScenarioSteps {
+  
+  @given("The relevant background of the situation")
+  public givenBackground(): void {
+    // Setup goes here.
+  }
 
-//   constructor() {
-//     // Create a mock user
-//     this.user = sinon.createStubInstance(User);
-//     // Set up the mock user's properties
-//     this.user.archived = {
-//       transactions: {
-//         withdrawal: []
-//       }
-//     };
-//   }
+  @when("Something happens naturally or through some actions")
+  public whenSomethingHappens(): void {
+    // Action goes here.
+  }
 
-//   @given(/some precondition/)
-//   public givenSomePrecondition() {
-//     // Use the mock
-//     this.user.archived.transactions.withdrawal.push({ amount: 100, date: new Date() });
-//   }
-
-//   @when(/some action/)
-//   public whenSomeAction() {
-//     // Use the mock
-//     const withdrawal = this.user.archived.transactions.withdrawal[0];
-//     assert.equal(withdrawal.amount, 100);
-//   }
-
-//   @then(/some outcome/)
-//   public thenSomeOutcome() {
-//     // Verify the mock was used
-//     assert(this.user.archived.transactions.withdrawal.length > 0);
-//   }
-// }
+  @then("The expected outcome should be achieved")
+  public thenExpectedOutcome(): void {
+    // Assertion goes here.
+    assert.ok(true);
+  }
+}
