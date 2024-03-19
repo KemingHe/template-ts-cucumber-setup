@@ -1,0 +1,46 @@
+{
+  "name": "diary-1-cucumberjs",
+  "version": "1.0.0",
+  "description": "TypeScript x CucumberJS x Jest tutorial.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js -p default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KemingHe/diary-1-cucumberjs.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "cucumberjs",
+    "jest",
+    "testing",
+    "BDD",
+    "FDD",
+    "TDD",
+    "tutorial",
+    "test-automation",
+    "CI/CD"
+  ],
+  "author": "Keming He <keminghe.career@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KemingHe/diary-1-cucumberjs/issues"
+  },
+  "homepage": "https://github.com/KemingHe/diary-1-cucumberjs#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@cucumber/cucumber-expressions": "^17.0.2",
+    "@cucumber/gherkin": "^28.0.0",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.29",
+    "@types/sinon": "^17.0.3",
+    "cucumber-tsflow": "^4.4.1",
+    "jest-github-actions-reporter": "^1.0.3",
+    "sinon": "^17.0.1",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.2"
+  }
+}
