@@ -11,10 +11,10 @@ let common = [
   '--require-module ts-node/register',
   '--require step-definitions/**/*.steps.ts',
   '--format progress-bar',
-  '--format @cucumber/pretty-formatter'
+  '--format @cucumber/pretty-formatter',
 ].join(' ');
 
 // Export common config as default.
 module.exports = {
-  default: common
-}
+  default: common,
+};

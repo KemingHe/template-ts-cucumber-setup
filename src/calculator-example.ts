@@ -17,11 +17,11 @@ export class Calculator {
 
   /**
    * Adds two numbers.
-   * 
+   *
    * @param {number} a - First number.
    * @param {number} b - Second number.
    * @returns {number} - Sum of a and b.
-   * 
+   *
    */
   addNum(a: number, b: number): number {
     return a + b;

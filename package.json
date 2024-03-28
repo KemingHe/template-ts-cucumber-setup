@@ -1,13 +1,22 @@
 {
-  "name": "diary-1-cucumberjs",
-  "version": "1.0.0",
+  "name": "template-ts-cucumber-setup",
+  "version": "0.0.1",
   "description": "TypeScript x CucumberJS x Jest tutorial.",
   "main": "index.js",
   "scripts": {
+    "start": "npm-run-all build run",
+    "run": "node dist/index.js",
+    "build": "tsc",
+    "prereview": "echo 'Initiating automatic code review...'",
+    "review": "npm-run-all format-write lint-fix test",
+    "postreview": "echo 'Code format, lint, and test completed.'",
     "test": "npm-run-all test-unit test-behave",
     "test-behave": "cucumber-js -p default",
     "test-unit": "jest",
-    "test-unit-watch": "jest --watch"
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix",
+    "format": "prettier . --check",
+    "format-write": "prettier . --check --write"
   },
   "repository": {
     "type": "git",
@@ -18,20 +27,26 @@
     "typescript",
     "cucumberjs",
     "jest",
-    "testing",
+    "eslint",
+    "prettier",
+    "code-review",
+    "code-quality",
     "BDD",
     "FDD",
     "TDD",
+    "CI/CD",
     "tutorial",
     "test-automation",
-    "CI/CD"
+    "test-driven-development",
+    "feature-driven-development",
+    "behavior-driven-development"
   ],
   "author": "Keming He <keminghe.career@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KemingHe/diary-1-cucumberjs/issues"
+    "url": "https://github.com/KemingHe/template-ts-cucumber-setup/issues"
   },
-  "homepage": "https://github.com/KemingHe/diary-1-cucumberjs#readme",
+  "homepage": "https://github.com/KemingHe/template-ts-cucumber-setup#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.1",
     "@cucumber/cucumber-expressions": "^17.0.2",
@@ -39,10 +54,14 @@
     "@cucumber/pretty-formatter": "^1.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.29",
-    "@types/sinon": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "cucumber-tsflow": "^4.4.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "jest-github-actions-reporter": "^1.0.3",
-    "sinon": "^17.0.1",
+    "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"

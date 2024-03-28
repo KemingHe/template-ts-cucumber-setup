@@ -14,9 +14,14 @@ export class FraudPreventionSteps {
     this.user.simpleMeanWithDrawal = average;
   }
 
-  @when("User tries to withdraw ${float}, which is more than the set threshold of {float} * average")
-  public whenUserTriesToWithdrawOverThreshold(current: number, multiplier: number): void {
-    this.user.simpleThreshold = this.user.simpleMeanWithDrawal * 2;
+  @when(
+    'User tries to withdraw ${float}, which is more than the set threshold of {float} * average'
+  )
+  public whenUserTriesToWithdrawOverThreshold(
+    current: number,
+    multiplier: number
+  ): void {
+    this.user.simpleThreshold = this.user.simpleMeanWithDrawal * multiplier;
     this.user.simpleWithdrawalAmount = current;
   }
 
@@ -29,18 +34,17 @@ export class FraudPreventionSteps {
 // Scenario 2: Sample scenario
 @binding()
 export class SampleScenarioSteps {
-  
-  @given("The relevant background of the situation")
+  @given('The relevant background of the situation')
   public givenBackground(): void {
     // Setup goes here.
   }
 
-  @when("Something happens naturally or through some actions")
+  @when('Something happens naturally or through some actions')
   public whenSomethingHappens(): void {
     // Action goes here.
   }
 
-  @then("The expected outcome should be achieved")
+  @then('The expected outcome should be achieved')
   public thenExpectedOutcome(): void {
     // Assertion goes here.
     assert.ok(true);

@@ -4,7 +4,7 @@
 
 /**
  * A simple user class storing name and withdrawal data.
- * 
+ *
  * @property {string} name - User's name.
  * @property {number} simpleMeanWithDrawal - User's mean withdrawal amount.
  * @property {number} simpleThreshold - User's withdrawal threshold.
