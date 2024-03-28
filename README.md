@@ -1,3 +1,3 @@
-# diary-1-cucumberjs
+# TypeScript BDD with auto-code-review template
 
-Public MIT repo for my TypeScript x CucumberJS x Jest LinkedIn tutorial article.
+TODO
