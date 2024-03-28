@@ -1,50 +1,66 @@
 # TypeScript BDD Template
 
 [![Node.js CI](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml)
+[![CodeQL](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/github-code-scanning/codeql)
 
-Typescript and Behavior-Driven Development complete boilerplate setup. 
+Typescript and Behavior-Driven Development complete boilerplate setup.
 
-Your one-stop, quick-start to any `Node.js 18` and `20+` project, fully customizable with **ZERO** production dependency restrictions. Ready for high-quality frontend, backend, hobby, or production development. (Current `npm start` simply builds and logs "Hello World!")
+> How to get the **most value** out of this?  
+> https://www.linkedin.com/pulse/juggling-cucumberjs-keming-he-648ke
 
-Made with :heart:, and maintained :gear: by Keming He. **Hire** or Connect :globe_with_meridians: with me on LinkedIn:
+Your one-stop, quick-start to any `Node.js 18 and 20+` project, fully customizable with **ZERO** production dependency restrictions. Ready for high-quality frontend, backend, hobby, or professional development.
+
+Made with love :heart:, and maintained by Keming He, **now open for hire**! :globe_with_meridians: Connect with me on LinkedIn:
+
 > Link: https://linkedin.com/in/keminghe
 
 ## Key Features
 
-- For complete code review, use `npm run review`, which includes format, lint, and test (unit and behave). This automation is also baked into the **GitHub Actions** `.github/workflows/auto-code-review.yml`, validating for both `Node.js 18` and `20` versions when `main` has been modified via `push` or `pull-request`. 
+For complete code review, simply run the following, which includes format, lint, and test (unit and behave):
 
-- More pre-defined commands below (and even more in `package.json`), give them a try!
+```bash
+npm run review
+```
 
-| Feature       | Command                | Description                     | Dev Module | Config File in <rootDir> |
-|---------------|------------------------|---------------------------------|------------|--------------------------|
-| Lint          | `npm run lint-fix`     | Code quality check and fix      | ESLint     | .eslintrc.json           |
-| Build         | `npm run build`        | Compile from ts to js           | TypeScript | tsconfig.json            |
-| Format        | `npm run format-write` | Code styling check and revise   | Prettier   | .prettierrc.json         |
-| Unit test     | `npm run test-unit`    | Unit test functions and modules | Jest       | jest.config.json         |
-| Behavior test | `npm run test-behave`  | Behavior test app and features  | CucumberJS | cucumber.js              |
+This automation is also baked into the **GitHub Actions**, validating for both `Node.js 18 and 20` versions when `main` has been modified via push or pull-request. You can modify the workflow at:
 
+```
+.github/workflows/auto-code-review.yml
+```
+
+More pre-defined commands below (and even more in `package.json`), give them a try!
+
+| Command                | Description           | Dev Module | Config File in Root |
+| ---------------------- | --------------------- | ---------- | ------------------- |
+| `npm run format-write` | Code style revision   | Prettier   | .prettierrc.json    |
+| `npm run lint-fix`     | Code quality revision | ESLint     | .eslintrc.json      |
+| `npm run build`        | Compile ts            | TypeScript | tsconfig.json       |
+| `npm run test-unit`    | Unit testing          | Jest       | jest.config.json    |
+| `npm run test-behave`  | Feature testing       | CucumberJS | cucumber.js         |
+
+Credit: This table was generated using: https://www.tablesgenerator.com/markdown_tables
 
 ## Big, Deep, Deep Thanks
 
 This tutorial/template is inspired, and made possible, by the these **awesome** people/communities (unordered). Please follow them on LinkedIn/GitHub and consider sponsoring :heartpulse: or buying them coffee :coffee: for their wonderful work:
 
-- [Khalil Stemmler](https://khalilstemmler.com/)'s TypeScript x ESLint blog post:
-> Link: https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+- [Khalil Stemmler](https://khalilstemmler.com/)'s TypeScript x ESLint blog post[^1]:
+  [^1]: How to use ESLint with TypeScript https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
 
-- Khalil Stemmler's TypeScript x ESLint x Prettier blog post:
-> Link: https://khalilstemmler.com/blogs/tooling/prettier/
+- Khalil Stemmler's TypeScript x ESLint x Prettier blog post[^2]:
+  [^2]: How to use Prettier with ESLint and TypeScript in VSCode https://khalilstemmler.com/blogs/tooling/prettier/
 
-- [Paul Ccari](https://blog.logrocket.com/author/paulccari/)'s TypeScript x ESLint x Prettier LogRocker blog:
-> Link: https://blog.logrocket.com/linting-typescript-eslint-prettier/
+- [Paul Ccari](https://blog.logrocket.com/author/paulccari/)'s TypeScript x ESLint x Prettier LogRocker blog[^3]:
+  [^3]: Linting in TypeScript using ESLint and Prettier https://blog.logrocket.com/linting-typescript-eslint-prettier/
 
-- [Elliot DeNolf](https://www.elliotdenolf.com)'s TypeScript x CucumberJS blog post:
-> Link: https://www.elliotdenolf.com/blog/cucumberjs-with-typescript/
+- [Elliot DeNolf](https://www.elliotdenolf.com)'s TypeScript x CucumberJS blog post[^4]:
+  [^4]: Cucumber.js with TypeScript https://www.elliotdenolf.com/blog/cucumberjs-with-typescript/
 
-- [Avsar Yagmur](https://medium.com/@avsaryagmurr)'s TypeScript x CucumbetJS x Playwright series:
-> Link: https://medium.com/@avsaryagmurr/list/playwright-test-automation-782786c016e8
+- [Avsar Yagmur](https://medium.com/@avsaryagmurr)'s TypeScript x CucumbetJS x Playwright series[^5]:
+  [^5]: Playwright Test Automation https://medium.com/@avsaryagmurr/list/playwright-test-automation-782786c016e8
 
-- [Tim Robers](https://github.com/timjroberts) and the wonderful cucumber-tsflow community:
-> Link: https://github.com/timjroberts/cucumber-js-tsflow
+- [Tim Robers](https://github.com/timjroberts) and the wonderful cucumber-tsflow community[^6]:
+  [^6]: cucumber-tsflow https://github.com/timjroberts/cucumber-js-tsflow
 
-- And GitHub Copilot in VSCode:
-> Link: https://code.visualstudio.com/docs/copilot/overview
+- And GitHub Copilot in VSCode[^7]:
+  [^7]: GitHub Copilot in VS Code https://code.visualstudio.com/docs/copilot/overview
