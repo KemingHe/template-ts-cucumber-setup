@@ -1,7 +1,8 @@
 # TypeScript BDD Template
 
-[![Node.js CI](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml)
+[![Node CI](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml)
 [![CodeQL](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/github-code-scanning/codeql)
+[![codecov](https://codecov.io/gh/KemingHe/template-ts-cucumber-setup/graph/badge.svg?token=CM4DPCNDHA)](https://codecov.io/gh/KemingHe/template-ts-cucumber-setup)
 
 Typescript and Behavior-Driven Development complete boilerplate setup.
 
@@ -25,8 +26,25 @@ npm run review
 This automation is also baked into the **GitHub Actions**, validating for both `Node.js 18 and 20` versions when `main` has been modified via push or pull-request. You can modify the workflow at:
 
 ```
-.github/workflows/auto-code-review.yml
+.github/workflows/node-ci.yml
 ```
+
+> [!NOTE] 
+> Update 04/02/24:
+> 
+> CodeCov reporting has been added to the `node-ci.yml` workflow.
+
+View the "**Sunburst**" coverage report of this repository here:
+
+![CodeCov report for this repo, visualized in Sunburst format.](https://codecov.io/gh/KemingHe/template-ts-cucumber-setup/graphs/sunburst.svg?token=CM4DPCNDHA)
+
+The inner-most circle is the entire project, moving away from the center are folders then, finally, a single file. The size and color of each slice is representing the number of statements and the coverage, respectively.
+
+> https://app.codecov.io/gh/KemingHe/template-ts-cucumber-setup
+
+Learn how to setup CodeCov for your repos here:
+
+> https://docs.codecov.com/docs/quick-start
 
 More pre-defined commands below (and even more in `package.json`), give them a try!
 
