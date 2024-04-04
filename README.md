@@ -1,6 +1,6 @@
 # TypeScript BDD Template
 
-[![Node CI](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/auto-code-review.yml)
+[![Node CI](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/node-ci.yml/badge.svg)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/node-ci.yml)
 [![CodeQL](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/KemingHe/template-ts-cucumber-setup/actions/workflows/github-code-scanning/codeql)
 [![codecov](https://codecov.io/gh/KemingHe/template-ts-cucumber-setup/graph/badge.svg?token=CM4DPCNDHA)](https://codecov.io/gh/KemingHe/template-ts-cucumber-setup)
 
