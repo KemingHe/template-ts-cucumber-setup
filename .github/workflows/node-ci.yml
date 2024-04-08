@@ -1,17 +1,21 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node CI
+name: Node.js CI
 
 on:
   # By default, run when update to main.
   push:
-    branches: ['main', dev']
+    branches: ['main', 'maintenance']
   pull_request:
-    branches: ['main']
+    branches: ['main', 'maintenance']
 
   # Make code-review manually runnable.
   workflow_dispatch:
+
+  # Allow to run on schedule.
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   review:
@@ -31,7 +35,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
+
+      # Opt for i and not ci to detect module updates.
+      - run: npm install
       - run: npm run review
 
       - name: Upload coverage reports to Codecov
