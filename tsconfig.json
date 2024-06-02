@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "esnext",
     "outDir": "./dist",
     "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
-      "src/*": ["./src/*"]
+      "@src/*": ["src/*"],
+      "@lib/*": ["src/lib/*"],
     },
     "strict": true,
+    "noEmit": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
@@ -17,6 +19,6 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "tmp/firestoreCRUD.ts", "tmp/firestoreSeed.ts"],
+  "exclude": ["node_modules"],
 }

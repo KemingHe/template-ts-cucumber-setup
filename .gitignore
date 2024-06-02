@@ -1,3 +1,7 @@
+# Custome local files and dir.
+tmp
+temp
+
 # Logs
 logs
 *.log
