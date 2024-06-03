@@ -16,8 +16,8 @@ afterAll(done => {
 
 // Port tests.
 describe('Server', () => {
-  it('is listening on port 3000', () => {
-    expect(port).toBe('3000');
+  it('is listening on port 5000', () => {
+    expect(port).toBe('5000');
   });
 });
 
