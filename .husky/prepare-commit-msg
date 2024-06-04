@@ -6,4 +6,4 @@ exec < /dev/tty
 
 # Step 2 run commitizen w/out local installation,
 # fallback to doing nothing if fails.
-pnpm dlx cz --hook || true
+pnpm cz --hook || true
