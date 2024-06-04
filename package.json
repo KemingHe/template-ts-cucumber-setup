@@ -35,7 +35,8 @@
     "lint:fix": "biome check --apply .",
     "test": "pnpm run test:unit-and-snapshot && pnpm run test:feature",
     "test:unit-and-snapshot": "jest",
-    "test:feature": "cucumber-js"
+    "test:feature": "cucumber-js",
+    "test:docker:build": "docker build -t test-build-backend-0:latest ."
   },
   "dependencies": {
     "dotenv-safe": "^9.1.0",
