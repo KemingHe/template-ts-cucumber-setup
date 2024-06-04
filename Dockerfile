@@ -28,7 +28,7 @@ RUN pnpm install
 FROM base AS build
 USER node
 COPY --chown=node:node . .
-RUN pnpm run build
+RUN pnpm run build:tsc
 
 # Stage 3.A Optimize for production, only install production dependencies,
 # then load the env vars and start the ExpressJS server via /dist dir from build stage.

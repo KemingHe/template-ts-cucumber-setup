@@ -81,7 +81,7 @@ describe('Firebase service setup and export', () => {
     jest.isolateModules(() => {
       // Scenario: mockGetApps returns an empty array.
       mockGetApps.mockImplementation(() => []);
-      const { fbApp } = require('@lib/firebaseInit');
+      const { fbApp } = require('@config/firebaseInit');
       expect(mockInitializeApp).toHaveBeenCalled();
       expect(fbApp).toEqual(mockApp);
     });
@@ -91,7 +91,7 @@ describe('Firebase service setup and export', () => {
     jest.isolateModules(() => {
       // Scenario: mockGetApps returns a non-empty array.
       mockGetApps.mockImplementation(() => [existingApp]);
-      const { fbApp } = require('@lib/firebaseInit');
+      const { fbApp } = require('@config/firebaseInit');
       expect(mockInitializeApp).not.toHaveBeenCalled();
       expect(fbApp).toEqual(existingApp);
     });
@@ -101,7 +101,7 @@ describe('Firebase service setup and export', () => {
   it('initializes the auth service', () => {
     jest.isolateModules(() => {
       mockGetApps.mockImplementation(() => []);
-      const { fbApp, fbAuth } = require('@lib/firebaseInit');
+      const { fbApp, fbAuth } = require('@config/firebaseInit');
       expect(mockGetAuth).toHaveBeenCalledWith(fbApp);
       expect(fbApp).toBe(mockApp);
       expect(fbAuth).toBe(mockAuth);
@@ -112,7 +112,7 @@ describe('Firebase service setup and export', () => {
   // it('initializes the real-time database', () => {
   //   jest.isolateModules(() => {
   //     mockGetApps.mockImplementation(() => []);
-  //     const { fbApp, fbDatabase } = require('@lib/firebaseInit');
+  //     const { fbApp, fbDatabase } = require('@config/firebaseInit');
   //     expect(mockGetDatabase).toHaveBeenCalledWith(fbApp);
   //     expect(fbDatabase).toBe(mockDatabase);
   //   });
@@ -122,7 +122,7 @@ describe('Firebase service setup and export', () => {
   it('initializes the Firestore document database', () => {
     jest.isolateModules(() => {
       mockGetApps.mockImplementation(() => []);
-      const { fbApp, fbStore } = require('@lib/firebaseInit');
+      const { fbApp, fbStore } = require('@config/firebaseInit');
       expect(mockGetFirestore).toHaveBeenCalledWith(fbApp, 'template-ts-cucumber-setup-firestore');
       expect(fbApp).toBe(mockApp);
       expect(fbStore).toBe(mockStore);
@@ -133,7 +133,7 @@ describe('Firebase service setup and export', () => {
   // it('initializes the Cloud Functions', () => {
   //   jest.isolateModules(() => {
   //     mockGetApps.mockImplementation(() => []);
-  //     const { fbApp, fbFn } = require('@lib/firebaseInit');
+  //     const { fbApp, fbFn } = require('@config/firebaseInit');
   //     expect(getFunctions).toHaveBeenCalledWith(fbApp);
   //     expect(fbFn).toBe(mockFunctions);
   //   });
@@ -143,7 +143,7 @@ describe('Firebase service setup and export', () => {
   // it('initializes the Analytics service', () => {
   //   jest.isolateModules(() => {
   //     mockGetApps.mockImplementation(() => []);
-  //     const { fbApp, fbAn } = require('@lib/firebaseInit');
+  //     const { fbApp, fbAn } = require('@config/firebaseInit');
   //     expect(getAnalytics).toHaveBeenCalledWith(fbApp);
   //     expect(fbAn).toBe(mockAnalytics);
   //   });

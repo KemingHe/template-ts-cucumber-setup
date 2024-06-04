@@ -40,5 +40,5 @@ export function initFirebaseApp(): { fbApp: FirebaseApp, fbAuth: Auth, fbStore: 
 }
 
 // Backwards compatible exports, allowing for:
-// import { fbApp, fbAuth, fbStore } from '@lib/firebaseInit';
+// import { fbApp, fbAuth, fbStore } from '@config/firebaseInit';
 export const { fbApp, fbAuth, fbStore } = initFirebaseApp();
