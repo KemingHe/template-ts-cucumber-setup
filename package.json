@@ -28,15 +28,18 @@
   },
   "scripts": {
     "prepare": "husky",
-    "start": "node dist/index.js",
-    "build": "tsc",
-    "review": "pnpm run lint && pnpm run test && pnpm run build",
     "lint": "biome ci .",
-    "lint:fix": "biome check --apply .",
+    "lint:fix": "biome check --write .",
     "test": "pnpm run test:unit-and-snapshot && pnpm run test:feature",
     "test:unit-and-snapshot": "jest",
     "test:feature": "cucumber-js",
-    "test:docker:build": "docker build -t test-build-backend-0:latest ."
+    "build": "pnpm run build:tsc && pnpm run build:docker",
+    "build:tsc": "tsc",
+    "postbuild:tsc": "echo 'Build complete: src/ -> dist/. Use `pnpm start` to start the server.'",
+    "prebuild:docker": "echo 'Begin Docker build test, image name: test-build-backend-0:latest.'",
+    "build:docker": "docker build -t test-build-backend-0:latest .",
+    "postbuild:docker": "echo 'Docker test build complete.'",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "dotenv-safe": "^9.1.0",
@@ -46,13 +49,12 @@
     "husky": "^9.0.11"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.3",
+    "@biomejs/biome": "^1.8.0",
     "@cucumber/cucumber": "^10.8.0",
     "@cucumber/cucumber-expressions": "^17.1.0",
     "@cucumber/gherkin": "^28.0.0",
     "@cucumber/pretty-formatter": "^1.0.1",
     "@jest/globals": "^29.7.0",
-    "@playwright/test": "^1.44.1",
     "@types/dotenv-safe": "^8.1.6",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",

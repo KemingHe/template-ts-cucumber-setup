@@ -6,7 +6,13 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
-      "@lib/*": ["src/lib/*"],
+      "@config/*": ["src/config/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"],
     },
     "strict": true,
     "noEmit": false,
@@ -19,6 +25,6 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "tmp/firestoreCRUD.ts", "tmp/firestoreSeed.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"],
 }
